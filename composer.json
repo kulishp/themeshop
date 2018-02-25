@@ -1,0 +1,9 @@
+{
+    "name": "kulishp/themeshop",
+    "description": "Shop themes for Yii2",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
