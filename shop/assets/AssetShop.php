@@ -1,18 +1,26 @@
 <?php
-namespace kulishp\themeshop\shop\assets;
+
+namespace frontend\assets;
+
 use yii\web\AssetBundle;
+
+/**
+ * Main frontend application asset bundle.
+ */
 class AssetShop extends AssetBundle
 {
-    public $sourcePath = '@vendor/kulishp/shop-theme-yii2/themes/shop';
+
+    public $sourcePath = '@vendor/kulishp/themeshop/web';
+    public $baseUrl = '@web';
     public $css = [
-        'css/Shop.min.css',
+        'css/design.css',
+        'css/member.css',
     ];
     public $js = [
-        'js/adminlte.min.js'
+
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapPluginAsset',
-        'rmrevin\yii\fontawesome\AssetBundle',
+        'yii\bootstrap\BootstrapAsset',
     ];
 }

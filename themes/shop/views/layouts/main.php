@@ -4,7 +4,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
-use kulishp\themeshop\shop\assets\AssetShop;
+use frontend\assets\AssetShop;
 
 AssetShop::register($this);
 ?>
