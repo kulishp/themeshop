@@ -1,12 +1,13 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 use frontend\assets\AssetShop;
 
-AssetShop::register($this);
+$bundle = AssetShop::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -17,6 +18,11 @@ AssetShop::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <?php $this->registerLinkTag([
+        'rel' => 'shortcut icon',
+        'type' => 'image/x-icon',
+        'href' => '/frontend/web/favicon.ico',
+    ]); ?>
     <?php $this->head() ?>
 </head>
 <body class="common-home">
@@ -76,8 +82,9 @@ AssetShop::register($this);
 
                 <div class="header-left">
                     <div id="logo">
-                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=common/home"><img
-                                    src="/image/catalog/logo.png"
+                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=common/home">
+                            <img
+                                    src="<?= Url::to([$bundle->baseUrl . '/image/catalog/logo.png']) ?>"
                                     title="Your Store" alt="Your Store" class="img-responsive"/></a>
                     </div>
                 </div>
@@ -285,28 +292,34 @@ AssetShop::register($this);
                     <div class="menu-category">
                         <ul class="dropmenu">
                             <li class="TT-Sub-List dropdown">
-                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=20" class="TT-Category-List">Roses</a>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=20"
+                                   class="TT-Category-List">Roses</a>
                                 <span class="active_menu"></span>
 
 
                                 <div class="dropdown-menu">
                                     <div class="dropdown-inner">
-                                        <ul class="list-unstyled childs_1 mega-dropdown-menu columns-2" style="width: 320px;">
+                                        <ul class="list-unstyled childs_1 mega-dropdown-menu columns-2"
+                                            style="width: 320px;">
 
                                             <li class="dropdown first" style="width: 50%;">
-                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=20_26" class="single-dropdown">Evil 25</a>
+                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=20_26"
+                                                   class="single-dropdown">Evil 25</a>
 
                                                 <div class="dropdown-menu">
                                                     <div class="dropdown-inner">
                                                         <ul class="list-unstyled childs_2">
 
-                                                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=26_59">
+                                                            <li>
+                                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=26_59">
                                                                     PC-01</a>
                                                             </li>
-                                                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=26_60">
+                                                            <li>
+                                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=26_60">
                                                                     PC-02</a>
                                                             </li>
-                                                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=26_61">
+                                                            <li>
+                                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=26_61">
                                                                     PC-03</a>
                                                             </li>
                                                             <li><a href="">
@@ -320,19 +333,23 @@ AssetShop::register($this);
                                             </li>
 
                                             <li class="dropdown first" style="width: 50%;">
-                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=20_27" class="single-dropdown">stop ache</a>
+                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=20_27"
+                                                   class="single-dropdown">stop ache</a>
 
                                                 <div class="dropdown-menu">
                                                     <div class="dropdown-inner">
                                                         <ul class="list-unstyled childs_2">
 
-                                                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=27_62">
+                                                            <li>
+                                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=27_62">
                                                                     Mac-01</a>
                                                             </li>
-                                                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=27_63">
+                                                            <li>
+                                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=27_63">
                                                                     Mac-02</a>
                                                             </li>
-                                                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=27_64">
+                                                            <li>
+                                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=27_64">
                                                                     Mac-03</a>
                                                             </li>
                                                             <li><a href="">
@@ -351,7 +368,8 @@ AssetShop::register($this);
                             </li>
 
                             <li class="TT-Sub-List dropdown">
-                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=18" class="TT-Category-List">Flower basket</a>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=18"
+                                   class="TT-Category-List">Flower basket</a>
                                 <span class="active_menu"></span>
 
 
@@ -377,7 +395,8 @@ AssetShop::register($this);
                             </li>
 
                             <li class="TT-Sub-List dropdown">
-                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=25" class="TT-Category-List">Gerberas</a>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=25"
+                                   class="TT-Category-List">Gerberas</a>
                                 <span class="active_menu"></span>
 
 
@@ -385,16 +404,19 @@ AssetShop::register($this);
                                     <div class="dropdown-inner">
                                         <ul class="list-unstyled childs_1 single-dropdown-menu">
                                             <li class="dropdown" style="width: 100%;">
-                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=25_28" class="single-dropdown"> Mixed flowers</a>
+                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=25_28"
+                                                   class="single-dropdown"> Mixed flowers</a>
 
                                                 <div class="dropdown-menu">
                                                     <div class="dropdown-inner">
                                                         <ul class="list-unstyled childs_2">
 
-                                                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=28_35">
+                                                            <li>
+                                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=28_35">
                                                                     test 1</a>
                                                             </li>
-                                                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=28_36">
+                                                            <li>
+                                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=28_36">
                                                                     test 2</a>
                                                             </li>
                                                             <li><a href="">
@@ -408,7 +430,8 @@ AssetShop::register($this);
                                             </li>
                                             <li class="dropdown" style="width: 100%;">
 
-                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=25_29">Mice and Trackballs</a>
+                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=25_29">Mice
+                                                    and Trackballs</a>
 
 
                                             </li>
@@ -426,7 +449,8 @@ AssetShop::register($this);
                                             </li>
                                             <li class="dropdown" style="width: 100%;">
 
-                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=25_32">Web Cameras</a>
+                                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=25_32">Web
+                                                    Cameras</a>
 
 
                                             </li>
@@ -450,7 +474,8 @@ AssetShop::register($this);
                             </li>
 
                             <li>
-                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=67">Exotic flowers</a>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=67">Exotic
+                                    flowers</a>
 
 
                                 <div class="dropdown-menu">
@@ -476,7 +501,8 @@ AssetShop::register($this);
                             </li>
 
                             <li>
-                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=68">Flower &amp; teddy</a>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/category&amp;path=68">Flower
+                                    &amp; teddy</a>
 
 
                                 <div class="dropdown-menu">
@@ -493,7 +519,10 @@ AssetShop::register($this);
                 </div>
                 <div class="swiper-viewport">
                     <div id="banner0" class="swiper-container">
-                        <div class="swiper-wrapper">      <div class="swiper-slide"><a href="#"><img src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/banners/left-banner-01-290x408.jpg" alt="Left-Banner" class="img-responsive" /></a></div>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><img
+                                            src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/banners/left-banner-01-290x408.jpg"
+                                            alt="Left-Banner" class="img-responsive"/></a></div>
                         </div>
                     </div>
                 </div>
@@ -505,48 +534,59 @@ AssetShop::register($this);
                     });
                     --></script>
                 <div class="html-content">
-                    <div class="box-content"><div id="ttcmstestimonial">
+                    <div class="box-content">
+                        <div id="ttcmstestimonial">
                             <div class="tttestimonial-content">
                                 <div class="tttestimonial-inner">
                                     <h4 class="title_block"><a href="#" title="Extra">Testimonials</a></h4>
                                     <ul id="tttestimonial-carousel" class="tt-carousel block_content">
                                         <li>
-                                            <div class="testimonial-image"><img alt="" src="image/catalog/demo/banners/user1.jpg"></div>
+                                            <div class="testimonial-image"><img alt=""
+                                                                                src="image/catalog/demo/banners/user1.jpg">
+                                            </div>
                                             <div class="testimonial-content">
                                                 <div class="testimonial-user-title">
                                                     <h3>John duff</h3>
                                                     <span class="tttestimonial-subtitle">Producer</span></div>
                                                 <div class="testimonial-desc">
-                                                    <p>Duis faucibus enim vitae nunc molestie, nec facilisis arcu pulvinar nullam mattis..</p>
+                                                    <p>Duis faucibus enim vitae nunc molestie, nec facilisis arcu
+                                                        pulvinar nullam mattis..</p>
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="testimonial-image"><img alt="" src="image/catalog/demo/banners/user2.jpg"></div>
+                                            <div class="testimonial-image"><img alt=""
+                                                                                src="image/catalog/demo/banners/user2.jpg">
+                                            </div>
                                             <div class="testimonial-content">
                                                 <div class="testimonial-user-title">
                                                     <h3>John duff</h3>
                                                     <span class="tttestimonial-subtitle">Producer</span></div>
                                                 <div class="testimonial-desc">
-                                                    <p>Duis faucibus enim vitae nunc molestie, nec facilisis arcu pulvinar nullam mattis..</p>
+                                                    <p>Duis faucibus enim vitae nunc molestie, nec facilisis arcu
+                                                        pulvinar nullam mattis..</p>
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="testimonial-image"><img alt="" src="image/catalog/demo/banners/user3.jpg"></div>
+                                            <div class="testimonial-image"><img alt=""
+                                                                                src="image/catalog/demo/banners/user3.jpg">
+                                            </div>
                                             <div class="testimonial-content">
                                                 <div class="testimonial-user-title">
                                                     <h3>John duff</h3>
                                                     <span class="tttestimonial-subtitle">Producer</span></div>
                                                 <div class="testimonial-desc">
-                                                    <p>Duis faucibus enim vitae nunc molestie, nec facilisis arcu pulvinar nullam mattis.</p>
+                                                    <p>Duis faucibus enim vitae nunc molestie, nec facilisis arcu
+                                                        pulvinar nullam mattis.</p>
                                                 </div>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                        </div></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="featured-carousel products-list">
@@ -556,13 +596,19 @@ AssetShop::register($this);
                             <div class="product-thumb transition">
                                 <div class="image">
                                     <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=43">
-                                        <img class="image_thumb" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/06-80x80.jpg" title="perspiciatis unde omnis" alt="perspiciatis unde omnis" />
-                                        <img class="image_thumb_swap" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/04-80x80.jpg" title="perspiciatis unde omnis" alt="perspiciatis unde omnis" />
+                                        <img class="image_thumb"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/06-80x80.jpg"
+                                             title="perspiciatis unde omnis" alt="perspiciatis unde omnis"/>
+                                        <img class="image_thumb_swap"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/04-80x80.jpg"
+                                             title="perspiciatis unde omnis" alt="perspiciatis unde omnis"/>
                                     </a>
                                 </div>
                                 <div class="thumb-description">
                                     <div class="caption">
-                                        <h4><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=43">perspiciatis unde omnis</a></h4>
+                                        <h4>
+                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=43">perspiciatis
+                                                unde omnis</a></h4>
                                         <!--<p>
 
                                         Intel Core 2 Duo processor
@@ -589,9 +635,15 @@ AssetShop::register($this);
                                         </div>
                                     </div>
                                     <div class="button-group">
-                                        <button class="btn-cart" type="button" onclick="cart.add('43');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                        <button class="btn-wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('43');"><i class="fa fa-heart"></i></button>
-                                        <button class="btn-compare" type="button" data-toggle="tooltip" title="Add to compare" onclick="compare.add('43');"><i class="fa fa-exchange"></i></button>
+                                        <button class="btn-cart" type="button" onclick="cart.add('43');"><i
+                                                    class="fa fa-shopping-cart"></i> <span
+                                                    class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button class="btn-wishlist" type="button" data-toggle="tooltip"
+                                                title="Add to Wish List" onclick="wishlist.add('43');"><i
+                                                    class="fa fa-heart"></i></button>
+                                        <button class="btn-compare" type="button" data-toggle="tooltip"
+                                                title="Add to compare" onclick="compare.add('43');"><i
+                                                    class="fa fa-exchange"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -600,13 +652,19 @@ AssetShop::register($this);
                             <div class="product-thumb transition">
                                 <div class="image">
                                     <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=40">
-                                        <img class="image_thumb" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/02-80x80.jpg" title="voluptate velit esse" alt="voluptate velit esse" />
-                                        <img class="image_thumb_swap" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/11-80x80.jpg" title="voluptate velit esse" alt="voluptate velit esse" />
+                                        <img class="image_thumb"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/02-80x80.jpg"
+                                             title="voluptate velit esse" alt="voluptate velit esse"/>
+                                        <img class="image_thumb_swap"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/11-80x80.jpg"
+                                             title="voluptate velit esse" alt="voluptate velit esse"/>
                                     </a>
                                 </div>
                                 <div class="thumb-description">
                                     <div class="caption">
-                                        <h4><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=40">voluptate velit esse</a></h4>
+                                        <h4>
+                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=40">voluptate
+                                                velit esse</a></h4>
                                         <!--<p>
                                     iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.
                                 ..</p>-->
@@ -617,9 +675,15 @@ AssetShop::register($this);
                                         </div>
                                     </div>
                                     <div class="button-group">
-                                        <button class="btn-cart" type="button" onclick="cart.add('40');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                        <button class="btn-wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('40');"><i class="fa fa-heart"></i></button>
-                                        <button class="btn-compare" type="button" data-toggle="tooltip" title="Add to compare" onclick="compare.add('40');"><i class="fa fa-exchange"></i></button>
+                                        <button class="btn-cart" type="button" onclick="cart.add('40');"><i
+                                                    class="fa fa-shopping-cart"></i> <span
+                                                    class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button class="btn-wishlist" type="button" data-toggle="tooltip"
+                                                title="Add to Wish List" onclick="wishlist.add('40');"><i
+                                                    class="fa fa-heart"></i></button>
+                                        <button class="btn-compare" type="button" data-toggle="tooltip"
+                                                title="Add to compare" onclick="compare.add('40');"><i
+                                                    class="fa fa-exchange"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -628,14 +692,20 @@ AssetShop::register($this);
                             <div class="product-thumb transition">
                                 <div class="image">
                                     <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=42">
-                                        <img class="image_thumb" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/01-80x80.jpg" title="aliquam quaerat voluptatem" alt="aliquam quaerat voluptatem" />
-                                        <img class="image_thumb_swap" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/06-80x80.jpg" title="aliquam quaerat voluptatem" alt="aliquam quaerat voluptatem" />
+                                        <img class="image_thumb"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/01-80x80.jpg"
+                                             title="aliquam quaerat voluptatem" alt="aliquam quaerat voluptatem"/>
+                                        <img class="image_thumb_swap"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/06-80x80.jpg"
+                                             title="aliquam quaerat voluptatem" alt="aliquam quaerat voluptatem"/>
                                     </a>
                                     <div class="sale-icon">Sale</div>
                                 </div>
                                 <div class="thumb-description">
                                     <div class="caption">
-                                        <h4><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=42">aliquam quaerat voluptatem</a></h4>
+                                        <h4>
+                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=42">aliquam
+                                                quaerat voluptatem</a></h4>
                                         <!--<p>
                                     The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there's no limit to what you can achieve.
 
@@ -896,14 +966,21 @@ AssetShop::register($this);
                                         </div>
 
                                         <div class="price">
-                                            <span class="price-new">$110.00</span> <span class="price-old">$122.00</span>
+                                            <span class="price-new">$110.00</span> <span
+                                                    class="price-old">$122.00</span>
                                             <span class="price-tax">Ex Tax: $90.00</span>
                                         </div>
                                     </div>
                                     <div class="button-group">
-                                        <button class="btn-cart" type="button" onclick="cart.add('42');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                        <button class="btn-wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
-                                        <button class="btn-compare" type="button" data-toggle="tooltip" title="Add to compare" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
+                                        <button class="btn-cart" type="button" onclick="cart.add('42');"><i
+                                                    class="fa fa-shopping-cart"></i> <span
+                                                    class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button class="btn-wishlist" type="button" data-toggle="tooltip"
+                                                title="Add to Wish List" onclick="wishlist.add('42');"><i
+                                                    class="fa fa-heart"></i></button>
+                                        <button class="btn-compare" type="button" data-toggle="tooltip"
+                                                title="Add to compare" onclick="compare.add('42');"><i
+                                                    class="fa fa-exchange"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -912,14 +989,20 @@ AssetShop::register($this);
                             <div class="product-thumb transition">
                                 <div class="image">
                                     <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=30">
-                                        <img class="image_thumb" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/02-80x80.jpg" title="aliquam quaerat voluptem" alt="aliquam quaerat voluptem" />
-                                        <img class="image_thumb_swap" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/12-80x80.jpg" title="aliquam quaerat voluptem" alt="aliquam quaerat voluptem" />
+                                        <img class="image_thumb"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/02-80x80.jpg"
+                                             title="aliquam quaerat voluptem" alt="aliquam quaerat voluptem"/>
+                                        <img class="image_thumb_swap"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/12-80x80.jpg"
+                                             title="aliquam quaerat voluptem" alt="aliquam quaerat voluptem"/>
                                     </a>
                                     <div class="sale-icon">Sale</div>
                                 </div>
                                 <div class="thumb-description">
                                     <div class="caption">
-                                        <h4><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=30">aliquam quaerat voluptem</a></h4>
+                                        <h4>
+                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=30">aliquam
+                                                quaerat voluptem</a></h4>
                                         <!--<p>
                                     Canon's press material for the EOS 5D states that it 'defines (a) new D-SLR category', while we're not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably 'chunkier'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR's, an important difference when compared to the latter is that the EOS 5D doesn't have any environmental seals. While Canon don't specifically refer to the EOS 5D as a 'professional' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they've not bought too many EF-S lenses...) äë
                                 ..</p>-->
@@ -930,9 +1013,15 @@ AssetShop::register($this);
                                         </div>
                                     </div>
                                     <div class="button-group">
-                                        <button class="btn-cart" type="button" onclick="cart.add('30');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                        <button class="btn-wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('30');"><i class="fa fa-heart"></i></button>
-                                        <button class="btn-compare" type="button" data-toggle="tooltip" title="Add to compare" onclick="compare.add('30');"><i class="fa fa-exchange"></i></button>
+                                        <button class="btn-cart" type="button" onclick="cart.add('30');"><i
+                                                    class="fa fa-shopping-cart"></i> <span
+                                                    class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button class="btn-wishlist" type="button" data-toggle="tooltip"
+                                                title="Add to Wish List" onclick="wishlist.add('30');"><i
+                                                    class="fa fa-heart"></i></button>
+                                        <button class="btn-compare" type="button" data-toggle="tooltip"
+                                                title="Add to compare" onclick="compare.add('30');"><i
+                                                    class="fa fa-exchange"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -941,14 +1030,20 @@ AssetShop::register($this);
                             <div class="product-thumb transition">
                                 <div class="image">
                                     <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=41">
-                                        <img class="image_thumb" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/09-80x80.jpg" title="magni dolores eosquies" alt="magni dolores eosquies" />
-                                        <img class="image_thumb_swap" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/04-80x80.jpg" title="magni dolores eosquies" alt="magni dolores eosquies" />
+                                        <img class="image_thumb"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/09-80x80.jpg"
+                                             title="magni dolores eosquies" alt="magni dolores eosquies"/>
+                                        <img class="image_thumb_swap"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/04-80x80.jpg"
+                                             title="magni dolores eosquies" alt="magni dolores eosquies"/>
                                     </a>
                                     <div class="sale-icon">Sale</div>
                                 </div>
                                 <div class="thumb-description">
                                     <div class="caption">
-                                        <h4><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=41">magni dolores eosquies</a></h4>
+                                        <h4>
+                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=41">magni
+                                                dolores eosquies</a></h4>
                                         <!--<p>
                                     Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife ´08, and it´s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.
                                 ..</p>-->
@@ -961,14 +1056,21 @@ AssetShop::register($this);
                                         </div>
 
                                         <div class="price">
-                                            <span class="price-new">$110.00</span> <span class="price-old">$122.00</span>
+                                            <span class="price-new">$110.00</span> <span
+                                                    class="price-old">$122.00</span>
                                             <span class="price-tax">Ex Tax: $90.00</span>
                                         </div>
                                     </div>
                                     <div class="button-group">
-                                        <button class="btn-cart" type="button" onclick="cart.add('41');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                        <button class="btn-wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('41');"><i class="fa fa-heart"></i></button>
-                                        <button class="btn-compare" type="button" data-toggle="tooltip" title="Add to compare" onclick="compare.add('41');"><i class="fa fa-exchange"></i></button>
+                                        <button class="btn-cart" type="button" onclick="cart.add('41');"><i
+                                                    class="fa fa-shopping-cart"></i> <span
+                                                    class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button class="btn-wishlist" type="button" data-toggle="tooltip"
+                                                title="Add to Wish List" onclick="wishlist.add('41');"><i
+                                                    class="fa fa-heart"></i></button>
+                                        <button class="btn-compare" type="button" data-toggle="tooltip"
+                                                title="Add to compare" onclick="compare.add('41');"><i
+                                                    class="fa fa-exchange"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -985,15 +1087,21 @@ AssetShop::register($this);
                             <div class="product-thumb transition">
                                 <div class="image">
                                     <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=41">
-                                        <img class="image_thumb" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/09-80x80.jpg" title="magni dolores eosquies" alt="magni dolores eosquies" />
-                                        <img class="image_thumb_swap" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/04-80x80.jpg" title="magni dolores eosquies" alt="magni dolores eosquies" />
+                                        <img class="image_thumb"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/09-80x80.jpg"
+                                             title="magni dolores eosquies" alt="magni dolores eosquies"/>
+                                        <img class="image_thumb_swap"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/04-80x80.jpg"
+                                             title="magni dolores eosquies" alt="magni dolores eosquies"/>
                                     </a>
                                     <div class="sale-icon">Sale</div>
                                 </div>
 
                                 <div class="thumb-description">
                                     <div class="caption">
-                                        <h4><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=41">magni dolores eosquies</a></h4>
+                                        <h4>
+                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=41">magni
+                                                dolores eosquies</a></h4>
                                         <!--<p>
                                     Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife ´08, and it´s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.
                                 ..</p>-->
@@ -1006,14 +1114,21 @@ AssetShop::register($this);
                                         </div>
 
                                         <div class="price">
-                                            <span class="price-new">$110.00</span> <span class="price-old">$122.00</span>
+                                            <span class="price-new">$110.00</span> <span
+                                                    class="price-old">$122.00</span>
                                             <span class="price-tax">Ex Tax: $90.00</span>
                                         </div>
                                     </div>
                                     <div class="button-group">
-                                        <button class="btn-cart" type="button" onclick="cart.add('41');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                        <button class="btn-wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('41');"><i class="fa fa-heart"></i></button>
-                                        <button class="btn-compare" type="button" data-toggle="tooltip" title="Add to compare" onclick="compare.add('41');"><i class="fa fa-exchange"></i></button>
+                                        <button class="btn-cart" type="button" onclick="cart.add('41');"><i
+                                                    class="fa fa-shopping-cart"></i> <span
+                                                    class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button class="btn-wishlist" type="button" data-toggle="tooltip"
+                                                title="Add to Wish List" onclick="wishlist.add('41');"><i
+                                                    class="fa fa-heart"></i></button>
+                                        <button class="btn-compare" type="button" data-toggle="tooltip"
+                                                title="Add to compare" onclick="compare.add('41');"><i
+                                                    class="fa fa-exchange"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -1022,15 +1137,21 @@ AssetShop::register($this);
                             <div class="product-thumb transition">
                                 <div class="image">
                                     <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=47">
-                                        <img class="image_thumb" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/10-80x80.jpg" title="aliquam quat voluptatem" alt="aliquam quat voluptatem" />
-                                        <img class="image_thumb_swap" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/12-80x80.jpg" title="aliquam quat voluptatem" alt="aliquam quat voluptatem" />
+                                        <img class="image_thumb"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/10-80x80.jpg"
+                                             title="aliquam quat voluptatem" alt="aliquam quat voluptatem"/>
+                                        <img class="image_thumb_swap"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/12-80x80.jpg"
+                                             title="aliquam quat voluptatem" alt="aliquam quat voluptatem"/>
                                     </a>
                                     <div class="sale-icon">Sale</div>
                                 </div>
 
                                 <div class="thumb-description">
                                     <div class="caption">
-                                        <h4><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=47">aliquam quat voluptatem</a></h4>
+                                        <h4>
+                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=47">aliquam
+                                                quat voluptatem</a></h4>
                                         <!--<p>
                                     Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&#39;re at the office
                                 ..</p>-->
@@ -1041,9 +1162,15 @@ AssetShop::register($this);
                                         </div>
                                     </div>
                                     <div class="button-group">
-                                        <button class="btn-cart" type="button" onclick="cart.add('47');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                        <button class="btn-wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('47');"><i class="fa fa-heart"></i></button>
-                                        <button class="btn-compare" type="button" data-toggle="tooltip" title="Add to compare" onclick="compare.add('47');"><i class="fa fa-exchange"></i></button>
+                                        <button class="btn-cart" type="button" onclick="cart.add('47');"><i
+                                                    class="fa fa-shopping-cart"></i> <span
+                                                    class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button class="btn-wishlist" type="button" data-toggle="tooltip"
+                                                title="Add to Wish List" onclick="wishlist.add('47');"><i
+                                                    class="fa fa-heart"></i></button>
+                                        <button class="btn-compare" type="button" data-toggle="tooltip"
+                                                title="Add to compare" onclick="compare.add('47');"><i
+                                                    class="fa fa-exchange"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -1052,15 +1179,21 @@ AssetShop::register($this);
                             <div class="product-thumb transition">
                                 <div class="image">
                                     <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=30">
-                                        <img class="image_thumb" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/02-80x80.jpg" title="aliquam quaerat voluptem" alt="aliquam quaerat voluptem" />
-                                        <img class="image_thumb_swap" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/12-80x80.jpg" title="aliquam quaerat voluptem" alt="aliquam quaerat voluptem" />
+                                        <img class="image_thumb"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/02-80x80.jpg"
+                                             title="aliquam quaerat voluptem" alt="aliquam quaerat voluptem"/>
+                                        <img class="image_thumb_swap"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/12-80x80.jpg"
+                                             title="aliquam quaerat voluptem" alt="aliquam quaerat voluptem"/>
                                     </a>
                                     <div class="sale-icon">Sale</div>
                                 </div>
 
                                 <div class="thumb-description">
                                     <div class="caption">
-                                        <h4><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=30">aliquam quaerat voluptem</a></h4>
+                                        <h4>
+                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=30">aliquam
+                                                quaerat voluptem</a></h4>
                                         <!--<p>
                                     Canon's press material for the EOS 5D states that it 'defines (a) new D-SLR category', while we're not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably 'chunkier'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR's, an important difference when compared to the latter is that the EOS 5D doesn't have any environmental seals. While Canon don't specifically refer to the EOS 5D as a 'professional' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they've not bought too many EF-S lenses...) äë
                                 ..</p>-->
@@ -1071,9 +1204,15 @@ AssetShop::register($this);
                                         </div>
                                     </div>
                                     <div class="button-group">
-                                        <button class="btn-cart" type="button" onclick="cart.add('30');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                        <button class="btn-wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('30');"><i class="fa fa-heart"></i></button>
-                                        <button class="btn-compare" type="button" data-toggle="tooltip" title="Add to compare" onclick="compare.add('30');"><i class="fa fa-exchange"></i></button>
+                                        <button class="btn-cart" type="button" onclick="cart.add('30');"><i
+                                                    class="fa fa-shopping-cart"></i> <span
+                                                    class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button class="btn-wishlist" type="button" data-toggle="tooltip"
+                                                title="Add to Wish List" onclick="wishlist.add('30');"><i
+                                                    class="fa fa-heart"></i></button>
+                                        <button class="btn-compare" type="button" data-toggle="tooltip"
+                                                title="Add to compare" onclick="compare.add('30');"><i
+                                                    class="fa fa-exchange"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -1082,15 +1221,21 @@ AssetShop::register($this);
                             <div class="product-thumb transition">
                                 <div class="image">
                                     <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=28">
-                                        <img class="image_thumb" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/17-80x80.jpg" title="aspetur autodit autfugit" alt="aspetur autodit autfugit" />
-                                        <img class="image_thumb_swap" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/13-80x80.jpg" title="aspetur autodit autfugit" alt="aspetur autodit autfugit" />
+                                        <img class="image_thumb"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/17-80x80.jpg"
+                                             title="aspetur autodit autfugit" alt="aspetur autodit autfugit"/>
+                                        <img class="image_thumb_swap"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/13-80x80.jpg"
+                                             title="aspetur autodit autfugit" alt="aspetur autodit autfugit"/>
                                     </a>
                                     <div class="sale-icon">Sale</div>
                                 </div>
 
                                 <div class="thumb-description">
                                     <div class="caption">
-                                        <h4><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=28">aspetur autodit autfugit</a></h4>
+                                        <h4>
+                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=28">aspetur
+                                                autodit autfugit</a></h4>
                                         <!--<p>
                                     HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.
 
@@ -1142,14 +1287,21 @@ AssetShop::register($this);
                                 ..</p>-->
 
                                         <div class="price">
-                                            <span class="price-new">$122.00</span> <span class="price-old">$122.00</span>
+                                            <span class="price-new">$122.00</span> <span
+                                                    class="price-old">$122.00</span>
                                             <span class="price-tax">Ex Tax: $100.00</span>
                                         </div>
                                     </div>
                                     <div class="button-group">
-                                        <button class="btn-cart" type="button" onclick="cart.add('28');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                        <button class="btn-wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('28');"><i class="fa fa-heart"></i></button>
-                                        <button class="btn-compare" type="button" data-toggle="tooltip" title="Add to compare" onclick="compare.add('28');"><i class="fa fa-exchange"></i></button>
+                                        <button class="btn-cart" type="button" onclick="cart.add('28');"><i
+                                                    class="fa fa-shopping-cart"></i> <span
+                                                    class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button class="btn-wishlist" type="button" data-toggle="tooltip"
+                                                title="Add to Wish List" onclick="wishlist.add('28');"><i
+                                                    class="fa fa-heart"></i></button>
+                                        <button class="btn-compare" type="button" data-toggle="tooltip"
+                                                title="Add to compare" onclick="compare.add('28');"><i
+                                                    class="fa fa-exchange"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -1158,14 +1310,20 @@ AssetShop::register($this);
                             <div class="product-thumb transition">
                                 <div class="image">
                                     <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=45">
-                                        <img class="image_thumb" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/11-80x80.jpg" title="quis autem veleuminium" alt="quis autem veleuminium" />
-                                        <img class="image_thumb_swap" src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/12-80x80.jpg" title="quis autem veleuminium" alt="quis autem veleuminium" />
+                                        <img class="image_thumb"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/11-80x80.jpg"
+                                             title="quis autem veleuminium" alt="quis autem veleuminium"/>
+                                        <img class="image_thumb_swap"
+                                             src="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/image/cache/catalog/demo/product/12-80x80.jpg"
+                                             title="quis autem veleuminium" alt="quis autem veleuminium"/>
                                     </a>
                                 </div>
 
                                 <div class="thumb-description">
                                     <div class="caption">
-                                        <h4><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=45">quis autem veleuminium</a></h4>
+                                        <h4>
+                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/product&amp;product_id=45">quis
+                                                autem veleuminium</a></h4>
                                         <!--<p>
 
 
@@ -1198,9 +1356,15 @@ AssetShop::register($this);
                                         </div>
                                     </div>
                                     <div class="button-group">
-                                        <button class="btn-cart" type="button" onclick="cart.add('45');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                        <button class="btn-wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('45');"><i class="fa fa-heart"></i></button>
-                                        <button class="btn-compare" type="button" data-toggle="tooltip" title="Add to compare" onclick="compare.add('45');"><i class="fa fa-exchange"></i></button>
+                                        <button class="btn-cart" type="button" onclick="cart.add('45');"><i
+                                                    class="fa fa-shopping-cart"></i> <span
+                                                    class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button class="btn-wishlist" type="button" data-toggle="tooltip"
+                                                title="Add to Wish List" onclick="wishlist.add('45');"><i
+                                                    class="fa fa-heart"></i></button>
+                                        <button class="btn-compare" type="button" data-toggle="tooltip"
+                                                title="Add to compare" onclick="compare.add('45');"><i
+                                                    class="fa fa-exchange"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -1211,12 +1375,18 @@ AssetShop::register($this);
                 <div class="sidebar panel panel-default information-list">
                     <div class="panel-heading">Information</div>
                     <div class="list-group">
-                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=4" class="list-group-item">About Us</a>
-                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=6" class="list-group-item">Delivery Information</a>
-                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=3" class="list-group-item">Privacy Policy</a>
-                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=5" class="list-group-item">Terms &amp; Conditions</a>
-                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/contact" class="list-group-item">Contact Us</a>
-                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/sitemap" class="list-group-item">Site Map</a>
+                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=4"
+                           class="list-group-item">About Us</a>
+                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=6"
+                           class="list-group-item">Delivery Information</a>
+                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=3"
+                           class="list-group-item">Privacy Policy</a>
+                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=5"
+                           class="list-group-item">Terms &amp; Conditions</a>
+                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/contact"
+                           class="list-group-item">Contact Us</a>
+                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/sitemap"
+                           class="list-group-item">Site Map</a>
                     </div>
                 </div>
 
@@ -1231,7 +1401,8 @@ AssetShop::register($this);
         <div class="footer-top">
             <aside id="footer-top">
                 <div class="html-content">
-                    <div class="box-content"><div class="footer-top-block container">
+                    <div class="box-content">
+                        <div class="footer-top-block container">
                             <div class="news-letter col-sm-12">
                                 <div class="news-letter-inner">
                                     <h4>Wants To Purchase Our Theme</h4>
@@ -1240,7 +1411,8 @@ AssetShop::register($this);
                                     </div>
                                 </div>
                             </div>
-                        </div></div>
+                        </div>
+                    </div>
                 </div>
 
             </aside>
@@ -1252,7 +1424,8 @@ AssetShop::register($this);
                 <div class="footer-column footer-left-cms col-sm-3">
                     <aside id="footer-left">
                         <div class="html-content">
-                            <div class="box-content"><div id="ttcmsfooterservice">
+                            <div class="box-content">
+                                <div id="ttcmsfooterservice">
                                     <div class="ttservicemerge">
                                         <h5>Footer Services</h5>
                                         <div class="block_content" id="footer-service">
@@ -1309,7 +1482,6 @@ AssetShop::register($this);
                     </aside>
 
 
-
                 </div>
                 <div class="merge-links col-sm-6">
                     <!--<div class="col-sm-3 footer-column footer-customer-service">
@@ -1323,48 +1495,84 @@ AssetShop::register($this);
                     <div class="col-sm-4 footer-column footer-extras">
                         <h5>Extras</h5>
                         <ul class="list-unstyled">
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/manufacturer">Brands</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/voucher">Gift Certificates</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=affiliate/login">Affiliate</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/special">Specials</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/sitemap">Site Map</a></li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/manufacturer">Brands</a>
+                            </li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/voucher">Gift
+                                    Certificates</a></li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=affiliate/login">Affiliate</a>
+                            </li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=product/special">Specials</a>
+                            </li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/sitemap">Site
+                                    Map</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-4 footer-column footer-my-account">
                         <h5>My Account</h5>
                         <ul class="list-unstyled">
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/account">My Account</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/order">Order History</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/wishlist">Wish List</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/newsletter">Newsletter</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/return/add">Returns</a></li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/account">My
+                                    Account</a></li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/order">Order
+                                    History</a></li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/wishlist">Wish
+                                    List</a></li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/newsletter">Newsletter</a>
+                            </li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/return/add">Returns</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-sm-4 footer-column footer-information">
                         <h5>Information</h5>
                         <ul class="list-unstyled">
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=4">About Us</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=6">Delivery Information</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
-                            <li><a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=4">About
+                                    Us</a></li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=6">Delivery
+                                    Information</a></li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=3">Privacy
+                                    Policy</a></li>
+                            <li>
+                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=information/information&amp;information_id=5">Terms
+                                    &amp; Conditions</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="footer-column footer-right-cms col-sm-3">
                     <aside id="footer-right">
                         <div class="html-content">
-                            <div class="box-content"><div class="contact-us">
+                            <div class="box-content">
+                                <div class="contact-us">
                                     <h5>Contact Us</h5>
                                     <ul class="list-unstyled">
-                                        <li class="address"><i class="fa fa-map-marker"></i><span class="contact-address">My Company, 42 Puffin street 12345 Puffinville France</span></li>
-                                        <li class="contact"><i class="fa fa-phone"></i><span class="phone">0123-456-789</span></li>
-                                        <li class="email"><i class="fa fa-envelope-o"></i><span class="email-address"><a href="mailto:themes@company.com">sales@yourcompany.com</a></span></li>
+                                        <li class="address"><i class="fa fa-map-marker"></i><span
+                                                    class="contact-address">My Company, 42 Puffin street 12345 Puffinville France</span>
+                                        </li>
+                                        <li class="contact"><i class="fa fa-phone"></i><span
+                                                    class="phone">0123-456-789</span></li>
+                                        <li class="email"><i class="fa fa-envelope-o"></i><span class="email-address"><a
+                                                        href="mailto:themes@company.com">sales@yourcompany.com</a></span>
+                                        </li>
                                     </ul>
-                                </div></div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="html-content">
-                            <div class="box-content"><div class="follow-us col-sm-12">
+                            <div class="box-content">
+                                <div class="follow-us col-sm-12">
                                     <h5>Follow us</h5>
                                     <ul class="list-unstyled">
                                         <li class="facebook">
@@ -1383,12 +1591,14 @@ AssetShop::register($this);
                                             </a>
                                         </li>
                                         <li class="google-plus">
-                                            <a title="Google Plus" rel="publisher" href="#" class="_blank" target="_blank">
+                                            <a title="Google Plus" rel="publisher" href="#" class="_blank"
+                                               target="_blank">
                                                 <i class="fa fa-google-plus"></i>
                                             </a>
                                         </li>
                                     </ul>
-                                </div></div>
+                                </div>
+                            </div>
                         </div>
 
                     </aside>
@@ -1405,9 +1615,13 @@ AssetShop::register($this);
                 <div class="footer-bottom-cms">
                     <aside id="footer-bottom">
                         <div class="html-content">
-                            <div class="box-content"><div id="ttcmsfooter" class="col-md-12 links">
-                                    <div class="ttfooter-logo"><a href="#"><img src="/image/catalog/logo.png" alt="footer-logo.png"></a></div>
-                                </div></div>
+                            <div class="box-content">
+                                <div id="ttcmsfooter" class="col-md-12 links">
+                                    <div class="ttfooter-logo"><a href="#">
+                                            <img src="<?= Url::to([$bundle->baseUrl . '/image/catalog/footer-logo.png']) ?>"
+                                                 alt="footer-logo.png"></a></div>
+                                </div>
+                            </div>
                         </div>
 
                     </aside>
@@ -1417,7 +1631,7 @@ AssetShop::register($this);
         </div>
     </footer>
 </div>
-    <?php $this->endBody() ?>
+<?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>
