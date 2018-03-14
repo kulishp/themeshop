@@ -6,6 +6,8 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 use frontend\assets\AssetShop;
+use frontend\widgets\WLang;
+
 
 $bundle = AssetShop::register($this);
 ?>
@@ -50,6 +52,9 @@ $bundle = AssetShop::register($this);
                 <div class="header-top-right">
                     <div id="top-links" class="nav pull-right">
                         <ul class="list-inline">
+                            <li class="dropdown">
+                                <?= WLang::widget();?>
+                            </li>
                             <li>
                                 <div class="dropdown"><a
                                             href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/account"
@@ -58,8 +63,15 @@ $bundle = AssetShop::register($this);
                                                 class="fa fa-caret-down"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-right account-link-toggle">
                                         <li>
-                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/register"><i
-                                                        class='fa fa-user'></i> Register</a></li>
+                                            <?= Html::a(
+                                                Yii::t('app', 'Register'),
+                                                Url::to(['/site/signup']),
+                                                [
+                                                    'target' => '_blank',
+                                                    'data-pjax' => 0,
+                                                ]
+                                            );?>
+
                                         <li>
                                             <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/login"><i
                                                         class='fa fa-sign-in'></i> Login</a></li>
