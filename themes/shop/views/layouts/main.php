@@ -39,8 +39,14 @@ $bundle = AssetShop::register($this);
                             <div class="html-content">
                                 <div class="box-content">
                                     <div id="ttcmsheader">
-                                        <div class="ttheader-service">mid season sale is here!-<a class="ttheader-btn"
-                                                                                                  href="#">shop now</a>
+                                        <div class="ttheader-service"><?= Yii::t('actions', 'Title Header Action')?>
+                                            <?= Html::a(
+                                                Yii::t('app', 'View'),
+                                                Url::to(['/']),
+                                                [
+                                                    'class' => 'ttheader-btn',
+                                                ]
+                                            ); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -52,37 +58,70 @@ $bundle = AssetShop::register($this);
                 <div class="header-top-right">
                     <div id="top-links" class="nav pull-right">
                         <ul class="list-inline">
-                            <li class="dropdown">
-                                <?= WLang::widget();?>
+                            <li>
+                                <?= WLang::widget(); ?>
                             </li>
                             <li>
                                 <div class="dropdown"><a
                                             href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/account"
                                             title="My Account" class="dropdown-toggle" data-toggle="dropdown"><i
-                                                class="fa fa-user"></i> <span class="ttuserheading">My Account</span><i
-                                                class="fa fa-caret-down"></i></a>
+                                                class="fa fa-user"></i> <span
+                                                class="ttuserheading"><?= Yii::t('app', 'My Account') ?></span>
+                                        <i class="fa fa-caret-down"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-right account-link-toggle">
-                                        <li>
-                                            <?= Html::a(
-                                                Yii::t('app', 'Register'),
-                                                Url::to(['/site/signup']),
-                                                [
-                                                    'target' => '_blank',
-                                                    'data-pjax' => 0,
-                                                ]
-                                            );?>
+                                        <?php
+                                        if (Yii::$app->user->isGuest) {
+                                            ?>
+                                            <li>
+                                                <?= Html::a(
+                                                    Yii::t('app', 'Register'),
+                                                    Url::to(['/site/signup'])
+                                                ); ?>
+                                            </li>
+                                            <li>
+                                                <?= Html::a(
+                                                    Html::tag('i', null, ['class' => 'fa fa-sign-in']) . ' ' . Yii::t('app', 'Login'),
+                                                    Url::to(['/site/login'])
+                                                ); ?>
+                                            </li>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <li>
+                                                <?= Html::beginForm(['/site/logout'], 'post', ['id' => 'form-logout'])
+                                                . Html::a(
+                                                    Html::tag('i', null, ['class' => 'fa fa-sign-out']) . ' ' . Yii::t('app', 'Logout') . ' (' . Yii::$app->user->identity->username . ')',
+                                                    Url::to(['/site/login']),
+                                                    [
+                                                        'onclick' => 'document.getElementById("form-logout").submit(); return false;'
+                                                    ]
+                                                )
+                                                . Html::submitButton(
+                                                    null,
+                                                    ['class' => 'hidden']
+                                                )
+                                                . Html::endForm(); ?>
+                                            </li>
+                                            <?php
+                                        }
+                                        ?>
 
-                                        <li>
-                                            <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/login"><i
-                                                        class='fa fa-sign-in'></i> Login</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li>
-                                <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=account/wishlist"
-                                   id="wishlist-total" title="Wish List (0)"><i class="fa fa-heart"></i> <span
-                                            class="hidden-xs hidden-sm hidden-md">Wish List (0)</span></a></li>
-
+                            <?php
+                            if (!Yii::$app->user->isGuest) {
+                                echo '<li>'
+                                    . Html::a(
+                                        Html::tag('i', null, ['class' => 'fa fa-heart text-danger']) . ' <span class="hidden-xs hidden-sm hidden-md"> ' . Yii::t('app', 'Wish List') . '</span>',
+                                        Url::to(['/account/wish-list']),
+                                        [
+                                            'id' => 'wishlist-total',
+                                        ]
+                                    )
+                                    . '</li>';
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -91,41 +130,76 @@ $bundle = AssetShop::register($this);
 
         <div class="full-header">
             <div class="container">
-
                 <div class="header-left">
                     <div id="logo">
-                        <a href="http://demo.templatetrip.com/Opencart/OPC03/OPC080/OPC12/index.php?route=common/home">
-                            <img
-                                    src="<?= Url::to([$bundle->baseUrl . '/image/catalog/logo.png']) ?>"
-                                    title="Your Store" alt="Your Store" class="img-responsive"/></a>
+                        <?= Html::a(
+                            Html::img($bundle->baseUrl . '/image/catalog/logo.png',
+                                [
+                                    'title' => 'Eco-Soap',
+                                    'alt' => 'Eco-Soap',
+                                    'class' => 'img-responsive',
+                                    'width' => 175
+                                ]),
+                            Yii::$app->getHomeUrl()
+                        ) ?>
                     </div>
                 </div>
                 <div class="right-block">
-
                     <div class="header-right-cms">
                         <aside id="header-right">
                             <div class="html-content">
                                 <div class="box-content">
                                     <div class="col-xs-12 col-sm-6 col-lg-6" id="ttcmsheaderservices">
                                         <div class="ttcmsheaderservice col-sm-12">
-                                            <div class="ttsupport ttservice col-sm-4">
+                                            <div class="ttfb ttservice col-sm-4">
                                                 <div class="ttcontent_inner">
                                                     <div class="service">
-                                                        <div class="ttsupport_img service-icon"></div>
+                                                        <div class="ttfb_img service-icon"></div>
                                                         <div class="service-content">
-                                                            <div class="service-title">Call center</div>
-                                                            <div class="service-desc"><a>088-888-8888</a></div>
+                                                            <div class="service-desc">
+                                                                <?= Html::a(
+                                                                    'Facebook',
+                                                                    'https://facebook.com/eco.soap.com.ua',
+                                                                    [
+                                                                        'target' => '_blank'
+                                                                    ]
+                                                                ); ?>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="ttcontact ttservice col-sm-4">
+                                            <div class="ttvk ttservice col-sm-4">
                                                 <div class="ttcontent_inner">
                                                     <div class="service">
-                                                        <div class="ttcontact_img service-icon"></div>
+                                                        <div class="ttvk_img service-icon"></div>
                                                         <div class="service-content">
-                                                            <div class="service-title">email</div>
-                                                            <div class="service-desc"><a href="mailto:info@website.com">info@website.com</a>
+                                                            <div class="service-desc">
+                                                                <?= Html::a(
+                                                                    'VK',
+                                                                    'https://vk.com/ecosoapy',
+                                                                    [
+                                                                        'target' => '_blank'
+                                                                    ]
+                                                                ); ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ttgm ttservice col-sm-4">
+                                                <div class="ttcontent_inner">
+                                                    <div class="service">
+                                                        <div class="ttgm_img service-icon"></div>
+                                                        <div class="service-content">
+                                                            <div class="service-desc">
+                                                                <?= Html::a(
+                                                                    'Gmail',
+                                                                    'mailto:shakhova.all@gmail.com',
+                                                                    [
+                                                                        'target' => '_blank'
+                                                                    ]
+                                                                ); ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -145,11 +219,11 @@ $bundle = AssetShop::register($this);
                             <button type="button" data-toggle="dropdown" data-loading-text="Loading..."
                                     class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i
                                         class="fa fa-shopping-cart"></i>
-                                <span class="cart-heading">Cart</span>
-                                <span id="cart-total">0 items</span></button>
+                                <span class="cart-heading"><?= Yii::t('cart', 'Cart')?></span>
+                                <span id="cart-total">0 тов.</span></button>
                             <ul class="dropdown-menu pull-right header-cart-toggle">
                                 <li>
-                                    <p class="text-center">Your shopping cart is empty!</p>
+                                    <p class="text-center"><?= Yii::t('cart', 'Cart is empty')?></p>
                                 </li>
                             </ul>
                         </div>

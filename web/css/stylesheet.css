@@ -6234,6 +6234,18 @@ h2.price {
     background: transparent url("TemplateTrip/images/sprite.png") repeat scroll -35px -607px;
 }
 
+#ttcmsheaderservices .ttcmsheaderservice .ttvk .ttcontent_inner .service .ttvk_img {
+    background: transparent url("TemplateTrip/images/sprite.png") repeat scroll -35px -677px;
+}
+
+#ttcmsheaderservices .ttcmsheaderservice .ttfb .ttcontent_inner .service .ttfb_img {
+    background: transparent url("TemplateTrip/images/sprite.png") repeat scroll -35px -728px;
+}
+
+#ttcmsheaderservices .ttcmsheaderservice .ttgm .ttcontent_inner .service .ttgm_img {
+    background: transparent url("TemplateTrip/images/sprite.png") repeat scroll -35px -785px;
+}
+
 #ttcmsheaderservices .ttcmsheaderservice .ttcontact .ttcontent_inner .service .ttcontact_img {
     background: transparent url("TemplateTrip/images/sprite.png") repeat scroll -35px -539px;
 }
@@ -6310,13 +6322,13 @@ h2.price {
         border: none;
     }
 
-    #ttcmsheaderservices .ttcmsheaderservice .ttsupport {
+    #ttcmsheaderservices .ttcmsheaderservice .ttsupport .ttvk .ttfb .ttgm {
         text-align: right;
     }
 }
 
 @media (max-width: 480px) {
-    #ttcmsheaderservices .ttcmsheaderservice .ttsupport .ttcontent_inner .service .ttsupport_img {
+    #ttcmsheaderservices .ttcmsheaderservice .ttsupport .ttvk .ttfb .ttgm .ttcontent_inner .service .ttsupport_img .ttvk_img .ttfb_img .ttgm_img{
         margin: 0;
     }
 
@@ -6340,7 +6352,7 @@ h2.price {
         line-height: 18px;
     }
 
-    #ttcmsheaderservices .ttcmsheaderservice .ttsupport {
+    #ttcmsheaderservices .ttcmsheaderservice .ttsupport .ttvk .ttfb .ttgm{
         text-align: left;
         padding: 0 0 10px;
     }
